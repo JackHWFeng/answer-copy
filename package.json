@@ -1,0 +1,101 @@
+{
+  "name": "answer-copy",
+  "version": "1.1.0",
+  "private": false,
+  "description": "把多个 AI Agent 的回复拼成统一格式，一键复制",
+  "license": "MIT",
+  "author": "JackHWFeng",
+  "homepage": "https://github.com/JackHWFeng/answer-copy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackHWFeng/answer-copy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JackHWFeng/answer-copy/issues"
+  },
+  "keywords": [
+    "electron",
+    "clipboard",
+    "ai-agents",
+    "productivity",
+    "desktop"
+  ],
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/assemble.test.js",
+    "dist": "electron-builder --win --publish never -c.win.signAndEditExecutable=false",
+    "dist:mac": "electron-builder --mac --publish never"
+  },
+  "devDependencies": {
+    "electron": "39.2.7",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.answercopy.app",
+    "productName": "Answer Copy",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "dir",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false,
+      "icon": "src/assets/answer-copy.ico"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "src/assets/answer-copy.ico",
+      "identity": null
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Utility"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Answer Copy",
+      "artifactName": "Answer-Copy-Setup-${version}.${ext}"
+    },
+    "compression": "normal"
+  },
+  "productName": "Answer Copy"
+}

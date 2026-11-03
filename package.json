@@ -24,7 +24,7 @@
   "scripts": {
     "start": "electron .",
     "test": "node test/assemble.test.js",
-    "dist": "electron-builder --win --publish never -c.win.signAndEditExecutable=false",
+    "dist": "electron-builder --win --publish never",
     "dist:mac": "electron-builder --mac --publish never"
   },
   "devDependencies": {
@@ -77,7 +77,7 @@
           ]
         }
       ],
-      "icon": "src/assets/answer-copy.ico",
+      "icon": "src/assets/answer-copy-512.png",
       "identity": null
     },
     "linux": {

@@ -4,7 +4,7 @@
 >
 > Paste many AI answers in, get one clean block out.
 
-![screenshot](docs/screenshot.png)
+![screenshot](screenshot.png)
 
 ---
 
